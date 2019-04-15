@@ -6,11 +6,11 @@
 #
 Name     : kde-dev-scripts
 Version  : 18.12.3
-Release  : 4
+Release  : 5
 URL      : https://download.kde.org/stable/applications/18.12.3/src/kde-dev-scripts-18.12.3.tar.xz
 Source0  : https://download.kde.org/stable/applications/18.12.3/src/kde-dev-scripts-18.12.3.tar.xz
 Source99 : https://download.kde.org/stable/applications/18.12.3/src/kde-dev-scripts-18.12.3.tar.xz.sig
-Summary  : No detailed summary available
+Summary  : Scripts and setting files useful during development of KDE software
 Group    : Development/Tools
 License  : GFDL-1.2 GPL-2.0
 Requires: kde-dev-scripts-bin = %{version}-%{release}
@@ -67,16 +67,15 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1551995335
+export SOURCE_DATE_EPOCH=1555326302
 mkdir -p clr-build
 pushd clr-build
-export LDFLAGS="${LDFLAGS} -fno-lto"
 %cmake ..
-make  %{?_smp_mflags} VERBOSE=1
+make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1551995335
+export SOURCE_DATE_EPOCH=1555326302
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/kde-dev-scripts
 cp COPYING %{buildroot}/usr/share/package-licenses/kde-dev-scripts/COPYING
