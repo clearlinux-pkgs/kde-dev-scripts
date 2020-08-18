@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xDBD2CE893E2D1C87 (cfeck@kde.org)
 #
 Name     : kde-dev-scripts
-Version  : 20.04.2
-Release  : 21
-URL      : https://download.kde.org/stable/release-service/20.04.2/src/kde-dev-scripts-20.04.2.tar.xz
-Source0  : https://download.kde.org/stable/release-service/20.04.2/src/kde-dev-scripts-20.04.2.tar.xz
-Source1  : https://download.kde.org/stable/release-service/20.04.2/src/kde-dev-scripts-20.04.2.tar.xz.sig
+Version  : 20.08.0
+Release  : 22
+URL      : https://download.kde.org/stable/release-service/20.08.0/src/kde-dev-scripts-20.08.0.tar.xz
+Source0  : https://download.kde.org/stable/release-service/20.08.0/src/kde-dev-scripts-20.08.0.tar.xz
+Source1  : https://download.kde.org/stable/release-service/20.08.0/src/kde-dev-scripts-20.08.0.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GFDL-1.2 GPL-2.0
@@ -61,15 +61,15 @@ man components for the kde-dev-scripts package.
 
 
 %prep
-%setup -q -n kde-dev-scripts-20.04.2
-cd %{_builddir}/kde-dev-scripts-20.04.2
+%setup -q -n kde-dev-scripts-20.08.0
+cd %{_builddir}/kde-dev-scripts-20.08.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1591906109
+export SOURCE_DATE_EPOCH=1597778525
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -81,15 +81,15 @@ export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
 export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
 export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
 %cmake ..
-make  %{?_smp_mflags}  VERBOSE=1
+make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1591906109
+export SOURCE_DATE_EPOCH=1597778525
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/kde-dev-scripts
-cp %{_builddir}/kde-dev-scripts-20.04.2/COPYING %{buildroot}/usr/share/package-licenses/kde-dev-scripts/a21ac62aee75f8fcb26b1de6fc90e5eea271854c
-cp %{_builddir}/kde-dev-scripts-20.04.2/COPYING.DOC %{buildroot}/usr/share/package-licenses/kde-dev-scripts/fcbf818f92ef8679a88f3778b12b4c8b5810545b
+cp %{_builddir}/kde-dev-scripts-20.08.0/COPYING %{buildroot}/usr/share/package-licenses/kde-dev-scripts/a21ac62aee75f8fcb26b1de6fc90e5eea271854c
+cp %{_builddir}/kde-dev-scripts-20.08.0/COPYING.DOC %{buildroot}/usr/share/package-licenses/kde-dev-scripts/fcbf818f92ef8679a88f3778b12b4c8b5810545b
 pushd clr-build
 %make_install
 popd
@@ -187,8 +187,6 @@ popd
 /usr/share/man/ca/man1/fixincludes.1
 /usr/share/man/ca/man1/pruneemptydirs.1
 /usr/share/man/ca/man1/qtdoc.1
-/usr/share/man/ca/man1/reportview.1
-/usr/share/man/ca/man1/transxx.1
 /usr/share/man/ca/man1/zonetab2pot.py.1
 /usr/share/man/da/man1/adddebug.1
 /usr/share/man/da/man1/cheatmake.1
@@ -204,7 +202,6 @@ popd
 /usr/share/man/da/man1/fixincludes.1
 /usr/share/man/da/man1/pruneemptydirs.1
 /usr/share/man/da/man1/qtdoc.1
-/usr/share/man/da/man1/reportview.1
 /usr/share/man/da/man1/zonetab2pot.py.1
 /usr/share/man/de/man1/adddebug.1
 /usr/share/man/de/man1/cheatmake.1
@@ -221,8 +218,6 @@ popd
 /usr/share/man/de/man1/fixincludes.1
 /usr/share/man/de/man1/pruneemptydirs.1
 /usr/share/man/de/man1/qtdoc.1
-/usr/share/man/de/man1/reportview.1
-/usr/share/man/de/man1/transxx.1
 /usr/share/man/de/man1/zonetab2pot.py.1
 /usr/share/man/es/man1/adddebug.1
 /usr/share/man/es/man1/cheatmake.1
@@ -239,8 +234,6 @@ popd
 /usr/share/man/es/man1/fixincludes.1
 /usr/share/man/es/man1/pruneemptydirs.1
 /usr/share/man/es/man1/qtdoc.1
-/usr/share/man/es/man1/reportview.1
-/usr/share/man/es/man1/transxx.1
 /usr/share/man/es/man1/zonetab2pot.py.1
 /usr/share/man/et/man1/qtdoc.1
 /usr/share/man/fr/man1/adddebug.1
@@ -258,8 +251,6 @@ popd
 /usr/share/man/fr/man1/fixincludes.1
 /usr/share/man/fr/man1/pruneemptydirs.1
 /usr/share/man/fr/man1/qtdoc.1
-/usr/share/man/fr/man1/reportview.1
-/usr/share/man/fr/man1/transxx.1
 /usr/share/man/fr/man1/zonetab2pot.py.1
 /usr/share/man/gl/man1/adddebug.1
 /usr/share/man/gl/man1/cheatmake.1
@@ -275,8 +266,6 @@ popd
 /usr/share/man/gl/man1/fixincludes.1
 /usr/share/man/gl/man1/pruneemptydirs.1
 /usr/share/man/gl/man1/qtdoc.1
-/usr/share/man/gl/man1/reportview.1
-/usr/share/man/gl/man1/transxx.1
 /usr/share/man/gl/man1/zonetab2pot.py.1
 /usr/share/man/it/man1/adddebug.1
 /usr/share/man/it/man1/cheatmake.1
@@ -293,8 +282,6 @@ popd
 /usr/share/man/it/man1/fixincludes.1
 /usr/share/man/it/man1/pruneemptydirs.1
 /usr/share/man/it/man1/qtdoc.1
-/usr/share/man/it/man1/reportview.1
-/usr/share/man/it/man1/transxx.1
 /usr/share/man/it/man1/zonetab2pot.py.1
 /usr/share/man/man1/adddebug.1
 /usr/share/man/man1/cheatmake.1
@@ -311,8 +298,6 @@ popd
 /usr/share/man/man1/fixincludes.1
 /usr/share/man/man1/pruneemptydirs.1
 /usr/share/man/man1/qtdoc.1
-/usr/share/man/man1/reportview.1
-/usr/share/man/man1/transxx.1
 /usr/share/man/man1/zonetab2pot.py.1
 /usr/share/man/nl/man1/adddebug.1
 /usr/share/man/nl/man1/cheatmake.1
@@ -329,8 +314,6 @@ popd
 /usr/share/man/nl/man1/fixincludes.1
 /usr/share/man/nl/man1/pruneemptydirs.1
 /usr/share/man/nl/man1/qtdoc.1
-/usr/share/man/nl/man1/reportview.1
-/usr/share/man/nl/man1/transxx.1
 /usr/share/man/nl/man1/zonetab2pot.py.1
 /usr/share/man/pt/man1/adddebug.1
 /usr/share/man/pt/man1/cheatmake.1
@@ -347,8 +330,6 @@ popd
 /usr/share/man/pt/man1/fixincludes.1
 /usr/share/man/pt/man1/pruneemptydirs.1
 /usr/share/man/pt/man1/qtdoc.1
-/usr/share/man/pt/man1/reportview.1
-/usr/share/man/pt/man1/transxx.1
 /usr/share/man/pt/man1/zonetab2pot.py.1
 /usr/share/man/pt_BR/man1/adddebug.1
 /usr/share/man/pt_BR/man1/cheatmake.1
@@ -365,8 +346,6 @@ popd
 /usr/share/man/pt_BR/man1/fixincludes.1
 /usr/share/man/pt_BR/man1/pruneemptydirs.1
 /usr/share/man/pt_BR/man1/qtdoc.1
-/usr/share/man/pt_BR/man1/reportview.1
-/usr/share/man/pt_BR/man1/transxx.1
 /usr/share/man/pt_BR/man1/zonetab2pot.py.1
 /usr/share/man/sv/man1/adddebug.1
 /usr/share/man/sv/man1/cheatmake.1
@@ -383,8 +362,6 @@ popd
 /usr/share/man/sv/man1/fixincludes.1
 /usr/share/man/sv/man1/pruneemptydirs.1
 /usr/share/man/sv/man1/qtdoc.1
-/usr/share/man/sv/man1/reportview.1
-/usr/share/man/sv/man1/transxx.1
 /usr/share/man/sv/man1/zonetab2pot.py.1
 /usr/share/man/uk/man1/adddebug.1
 /usr/share/man/uk/man1/cheatmake.1
@@ -401,6 +378,4 @@ popd
 /usr/share/man/uk/man1/fixincludes.1
 /usr/share/man/uk/man1/pruneemptydirs.1
 /usr/share/man/uk/man1/qtdoc.1
-/usr/share/man/uk/man1/reportview.1
-/usr/share/man/uk/man1/transxx.1
 /usr/share/man/uk/man1/zonetab2pot.py.1
